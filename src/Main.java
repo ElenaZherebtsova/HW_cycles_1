@@ -26,37 +26,41 @@ public class Main
 
 
     public static void task2 () {
+        System.out.println(" ");
         System.out.println("Задача 2");
         // С помощью цикла for выведите в консоль все числа от 10 до 1.
         for (int b = 10; b >= 1; b = b-1) {
             System.out.printf(" " + b);
         }
-        System.out.println("");
+        System.out.println(" ");
 
     }
 
 
     public static void task3 () {
+        System.out.println(" ");
         System.out.println("Задача 3");
         // Выведите в консоль все четные числа от 0 до 17.
         for (int c = 0; c <= 17; c = c+2) {
             System.out.printf(" " + c);
         }
-        System.out.println("");
+        System.out.println(" ");
 
     }
 
 
     public static void task4 () {
+        System.out.println(" ");
         System.out.println("Задача 4");
         // Выведите в консоль все числа от 10 до −10 от бо́льшего числа к меньшему.
         for (int d = 10; d >= -10; d = d -1) {
             System.out.printf(d + " ");
         }
-        System.out.println("");
+        System.out.println(" ");
     }
 
     public static void task5 () {
+        System.out.println(" ");
         System.out.println("Задача 5");
         // Напишите программу, которая выводит в консоль все високосные года,
         // начиная с 1904 года до 2096.
@@ -70,29 +74,32 @@ public class Main
 
 
     public static void task6 () {
+        System.out.println(" ");
         System.out.println("Задача 6");
         // Напишите программу, которая выводит в консоль последовательность чисел:
         //7 14 21 28 35 42 49 56 63 70 77 84 91 98
         for (int f = 7; f <= 98; f = f+7) {
             System.out.printf(f +" ");
         }
-        System.out.println("");
+        System.out.println(" ");
 
     }
 
 
     public static void task7 () {
+        System.out.println(" ");
         System.out.println("Задача 7");
         // Напишите программу, которая выводит в консоль последовательность чисел:
         //1 2 4 8 16 32 64 128 256 512
         for (int g = 1; g <= 512; g = g*2) {
             System.out.printf(g + " ");
         }
-        System.out.println("");
+        System.out.println(" ");
 
     }
 
     public static void task8 () {
+        System.out.println(" ");
         System.out.println("Задача 8");
         // Посчитайте с помощью цикла for сумму годовых накоплений,
         // если каждый месяц вы будете откладывать по 29 000 рублей «в банку».
@@ -107,6 +114,7 @@ public class Main
 
 
     public static void task9 () {
+        System.out.println(" ");
         System.out.println("Задача 9");
         // Перепишите решение задачи выше при условии,
         // что деньги вы откладывать будете не «в банку»,
@@ -126,7 +134,7 @@ public class Main
         }
 
 
-        System.out.println("");
+        System.out.println(" ");
 
     }
 
@@ -139,7 +147,7 @@ public class Main
             System.out.println(j + "*2=" + j*2);
         }
 
-        System.out.println("");
+        System.out.println(" ");
 
     }
 
