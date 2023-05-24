@@ -141,7 +141,6 @@ public class Main {
 
         int pt = 3;
         int monthDays = 31;
-
         for (; pt <= monthDays; pt += 7) {
             System.out.println(pt + "-е число это пятница, нужно подготовить отчет!");
         }
