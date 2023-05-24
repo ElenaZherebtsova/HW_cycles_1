@@ -19,11 +19,12 @@ public class Main {
         int vklad = 15000;
         int totalVklad = 0;
         int month = 0;
-        while (totalVklad < 2_459_000) {
+        int limit = 2_459_000;
+        while (totalVklad < limit) {
+            totalVklad = totalVklad + vklad;
             month++;
             System.out.println(month + "-й месяц, сумма вклада = " + totalVklad + " руб.");
 
-            totalVklad = totalVklad + vklad;
         }
         System.out.println(month + "-й месяц, сумма вклада = " + totalVklad + " руб.");
     }
@@ -58,12 +59,14 @@ public class Main {
         // если показатели рождаемости и смертности постоянны.
 
         int people = 12_000_000;
+        int born = 17;
+        int death = 8;
 
         for (int i = 1; i <= 10; i++) {
-            int born = people / 1000 * 17;
-            int death = people / 1000 * 8;
+            int bornYear = people / 1000 * born;
+            int deathYear = people / 1000 * death;
 
-            people  = people + born - death;
+            people  = people + bornYear - deathYear;
             System.out.println(i + "-й год, численность = " + people + " человек.");
         }
 
@@ -76,11 +79,13 @@ public class Main {
         // Вычислите и выведите в консоль, сколько месяцев Василию нужно будет копить,
         // чтобы собрать сумму в 12 миллионов рублей при условии, что процент банка
         // от накоплений не меняется, а всегда равен 7%.
-        double vklad4 = 15000;
+        double vklad4 = 15_000;
         int i = 1;
-        while (vklad4 < 12000000) {
+        int limitVklad = 12_000_000;
+        int percent = 7;
+        while (vklad4 < limitVklad) {
             i++;
-            vklad4 = vklad4 + vklad4 * 0.07;
+            vklad4 = vklad4 + vklad4 * percent / 100;
             System.out.println(i + "-й месяц, вклад Василия = " + vklad4 + " руб.");
         }
 
@@ -94,9 +99,11 @@ public class Main {
         // за 6, 12, 18, 24-й и следующие месяцы.
         double vklad5 = 15000;
         int i = 0;
-        while (vklad5 < 12000000) {
+        int limitVklad5 = 12_000_000;
+        int percent5 = 7;
+        while (vklad5 < limitVklad5) {
             i++;
-            vklad5 += vklad5 * 0.07;
+            vklad5 += vklad5 * percent5 / 100;
             if (i % 6 == 0) {
                 System.out.println(i + "-й месяц, вклад Василия = " + vklad5 + " руб.");
             }
@@ -109,11 +116,13 @@ public class Main {
         System.out.println("Задача 6");
         // Напишите программу, которая будет выводить сумму накоплений за каждые
         // полгода в течение 9 лет.
-        double vklad6 = 15000;
+        double vklad6 = 15_000;
+        int percent6 = 7;
+        int limitYear = 9;
         int i = 0;
-        while (i <= 9 * 12) {
+        while (i <= limitYear * 12) {
             i++;
-            vklad6 += vklad6 * 0.07;
+            vklad6 += vklad6 * percent6 /100;
             if (i % 6 == 0) {
                 System.out.println(i + "-й месяц, вклад Василия = " + vklad6 + " руб.");
             }
