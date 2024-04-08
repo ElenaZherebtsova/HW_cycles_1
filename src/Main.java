@@ -1,5 +1,4 @@
-public class Main
-{
+public class Main {
     public static void main(String[] args) {
         task1();
         task2();
@@ -9,144 +8,160 @@ public class Main
         task6();
         task7();
         task8();
-        task9();
-        task10();
-
     }
 
-    public static void task1 () {
+    public static void task1() {
+        System.out.println(" ");
         System.out.println("Задача 1");
-        // С помощью цикла for выведите в консоль все числа от 1 до 10.
-        for (int a = 1; a <= 10; a++) {
-            System.out.printf(" " + a);
+        // С помощью цикла while посчитайте, сколько месяцев потребуется,
+        // чтобы накопить 2 459 000 рублей при условии, что первоначально
+        // мы имеем 0 рублей и готовы откладывать по 15 тысяч рублей.
+        int vklad = 15000;
+        int totalVklad = 0;
+        int month = 0;
+        int limit = 2_459_000;
+        while (totalVklad < limit) {
+            totalVklad = totalVklad + vklad;
+            month++;
+            System.out.println(month + "-й месяц, сумма вклада = " + totalVklad + " руб.");
+
+        }
+        System.out.println(month + "-й месяц, сумма вклада = " + totalVklad + " руб.");
+    }
+
+
+    public static void task2() {
+        System.out.println(" ");
+        System.out.println("Задача 2");
+        // Выведите в одну строку через пробел числа от 1 до 10 с помощью цикла while.
+        // На следующей строке выведите числа в обратном порядке от 10 до 1 с помощью цикла for.
+        int i = 0;
+        while (i < 10) {
+            i++;
+            System.out.printf(i + " ");
+        }
+        System.out.println(" ");
+
+        for (; i >= 1; i = i - 1) {
+            System.out.printf(i + " ");
         }
         System.out.println(" ");
 
     }
 
 
-    public static void task2 () {
-        System.out.println("Задача 2");
-        // С помощью цикла for выведите в консоль все числа от 10 до 1.
-        for (int b = 10; b >= 1; b = b-1) {
-            System.out.printf(" " + b);
-        }
-        System.out.println("");
-
-    }
-
-
-    public static void task3 () {
+    public static void task3() {
+        System.out.println(" ");
         System.out.println("Задача 3");
-        // Выведите в консоль все четные числа от 0 до 17.
-        for (int c = 0; c <= 17; c = c+2) {
-            System.out.printf(" " + c);
+        //В стране Y население равно 12 миллионов человек.
+        //Рождаемость составляет 17 человек на 1000, смертность — 8 человек.
+        // Рассчитайте, какая численность населения будет через 10 лет,
+        // если показатели рождаемости и смертности постоянны.
+
+        int people = 12_000_000;
+        int born = 17;
+        int death = 8;
+
+        for (int i = 1; i <= 10; i++) {
+            int bornYear = people / 1000 * born;
+            int deathYear = people / 1000 * death;
+
+            people  = people + bornYear - deathYear;
+            System.out.println(i + "-й год, численность = " + people + " человек.");
         }
-        System.out.println("");
 
     }
 
 
-    public static void task4 () {
+    public static void task4() {
+        System.out.println(" ");
         System.out.println("Задача 4");
-        // Выведите в консоль все числа от 10 до −10 от бо́льшего числа к меньшему.
-        for (int d = 10; d >= -10; d = d -1) {
-            System.out.printf(d + " ");
+        // Вычислите и выведите в консоль, сколько месяцев Василию нужно будет копить,
+        // чтобы собрать сумму в 12 миллионов рублей при условии, что процент банка
+        // от накоплений не меняется, а всегда равен 7%.
+        double vklad4 = 15_000;
+        int i = 1;
+        int limitVklad = 12_000_000;
+        int percent = 7;
+        while (vklad4 < limitVklad) {
+            i++;
+            vklad4 = vklad4 + vklad4 * percent / 100;
+            System.out.println(i + "-й месяц, вклад Василия = " + vklad4 + " руб.");
         }
-        System.out.println("");
+
     }
 
-    public static void task5 () {
+    public static void task5() {
+        System.out.println(" ");
         System.out.println("Задача 5");
-        // Напишите программу, которая выводит в консоль все високосные года,
-        // начиная с 1904 года до 2096.
-        // В консоль результат должен выводиться в формате:
-        // «… год является високосным».
-        for (int e = 1904; e <= 2096; e = e+4) {
-            System.out.println(e +"-й год является високосным.");
+        // Видоизмените программу таким образом, чтобы в консоль выводились не все
+        // месяцы подряд, а только каждый шестой. Должны быть видны накопления
+        // за 6, 12, 18, 24-й и следующие месяцы.
+        double vklad5 = 15000;
+        int i = 0;
+        int limitVklad5 = 12_000_000;
+        int percent5 = 7;
+        while (vklad5 < limitVklad5) {
+            i++;
+            vklad5 += vklad5 * percent5 / 100;
+            if (i % 6 == 0) {
+                System.out.println(i + "-й месяц, вклад Василия = " + vklad5 + " руб.");
+            }
         }
-
     }
 
 
-    public static void task6 () {
+    public static void task6() {
+        System.out.println(" ");
         System.out.println("Задача 6");
-        // Напишите программу, которая выводит в консоль последовательность чисел:
-        //7 14 21 28 35 42 49 56 63 70 77 84 91 98
-        for (int f = 7; f <= 98; f = f+7) {
-            System.out.printf(f +" ");
+        // Напишите программу, которая будет выводить сумму накоплений за каждые
+        // полгода в течение 9 лет.
+        double vklad6 = 15_000;
+        int percent6 = 7;
+        int limitYear = 9;
+        int i = 0;
+        while (i <= limitYear * 12) {
+            i++;
+            vklad6 += vklad6 * percent6 /100;
+            if (i % 6 == 0) {
+                System.out.println(i + "-й месяц, вклад Василия = " + vklad6 + " руб.");
+            }
+
         }
-        System.out.println("");
 
     }
 
 
-    public static void task7 () {
+    public static void task7() {
+        System.out.println(" ");
         System.out.println("Задача 7");
-        // Напишите программу, которая выводит в консоль последовательность чисел:
-        //1 2 4 8 16 32 64 128 256 512
-        for (int g = 1; g <= 512; g = g*2) {
-            System.out.printf(g + " ");
+        // Выведите на каждую пятницу месяца (включая полученную) с
+        // ообщение следующего вида:
+        // «Сегодня пятница, ...-е число. Необходимо подготовить отчет»
+
+        int pt = 3;
+        int monthDays = 31;
+        for (; pt <= monthDays; pt += 7) {
+            System.out.println(pt + "-е число это пятница, нужно подготовить отчет!");
         }
-        System.out.println("");
+
 
     }
 
-    public static void task8 () {
+    public static void task8() {
+        System.out.println(" ");
         System.out.println("Задача 8");
-        // Посчитайте с помощью цикла for сумму годовых накоплений,
-        // если каждый месяц вы будете откладывать по 29 000 рублей «в банку».
-        int vklad = 29000;
-        int totalVklad = 0;
-        for (int i =0; i <= 12; i++) {
-            System.out.println(i +"-й месяц, сумма накоплений = " + totalVklad + " руб.");
-            totalVklad = totalVklad + vklad;
+        // Нам нужно написать астрономическое приложение, которое считает,
+        // когда над Землей пролетает комета.
+        //Известно, что комета пролетает каждый 79-й год, начиная с нулевого.
+        int today = 2023;
+        for (int i = 0; i < today + 100; i = i + 79) {
+            if (i >= today - 200) {
+                System.out.println(i);
+            }
+
         }
 
     }
-
-
-    public static void task9 () {
-        System.out.println("Задача 9");
-        // Перепишите решение задачи выше при условии,
-        // что деньги вы откладывать будете не «в банку»,
-        // а в банк под проценты — 12% годовых.
-        int vkladBank = 29000;
-        int totalVkladBank = 0;
-
-        int vkladBankProcent = vkladBank * 100;
-        int totalProcent = 0;
-        for (int i = 1; i <= 12; i++) {
-            totalProcent = totalProcent + totalProcent / 100;
-            totalProcent = totalProcent + vkladBankProcent;
-
-            totalVkladBank = totalProcent / 100;
-            System.out.println(i +"-й месяй, сумма накоплений = "
-                    + totalVkladBank + " руб.");
-        }
-
-
-        System.out.println("");
-
-    }
-
-    public static void task10 () {
-        System.out.println("Задача 10");
-        // Напишите программу, которая выводит в консоль таблицу умножения на 2:
-        // 2*1=2...
-
-        for (int j=1; j <= 10; j++) {
-            System.out.println(j + "*2=" + j*2);
-        }
-
-        System.out.println("");
-
-    }
-
-
-
-
-
-
-
 }
+
